@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check</title>
+    <link rel="stylesheet" href="check.css">
+    <script src="https://kit.fontawesome.com/0f1123ccdb.js" crossorigin="anonymous"></script>
+    <script src="base.js"></script>
+</head>
+
+
+<body>
+    <div class="inner">
+        <h1 id="logo"><a href="#"><img src="logo-blue.png" alt="로고"></a>
+        </h1>
+        <p class="cgrts">퀴즈톡 가입을 시작합니다!</p>
+        <form id="form1" action="">
+            <h2>회원 및 계정 정보 입력</h2>
+                <div id="email">
+                    <label for="quiztalk">이메일</label>
+                    <input class="w-100 common_border" type="text" id="quiztalk" name="quiztalk" placeholder="퀴즈톡 아이디로 사용할 이메일을 입력해주세요."> <br>
+                    <div class="flex" id="email_num">
+                        <input class="reput" type="text" id="numb" name="numb" placeholder="메일로 전송된 인증번호를 입력해주세요.">
+                        <input id="send" onclick="alert('압력하신 이메일 주소로 전송된 인증번호를 3분 안에 입력해 주세요.')" class="email_send" type="submit" value="인증번호 전송">
+                    </div>
+                    
+                </div>
+                <div>
+                    <label for="password">비밀번호</label>
+                    <input class="w-100 common_border" type="password" id="password" name="password" onchange="check()" placeholder="비밀번호를 입력해주세요.">
+                </div>
+                <div>
+                    <label for="re_password">비밀번호 재입력</label>
+                    <input class="w-100 common_border" type="password" id="re_password" name="re_password" onchange="check()" placeholder="비밀번호를 입력해주세요.">
+                    <div id ="test-n" class="test" style ="display:none">비밀번호가 틀렸습니다.</div>
+                    <div id ="test-y" class="test" style ="display:none">비밀번호가 일치합니다.</div>
+                </div>
+                
+                <div>
+                    <label for="name">이름</label>
+                    <input class="w-100 common_border" type="text" id="name" name="name" placeholder="이름을 입력해주세요.">
+                </div>
+                <div>
+                    <label for="name">닉네임</label>
+                    <div id="bigbox" class="w-100 common_border">
+                        <input type="type" placeholder="닉네임을 입력해주세요." oninput="realtimeCheck(this.value.length)"  maxlength="10">                             
+                        <div class="inline-block counting">
+                            <span id="count"></span><span>/10</span>
+                        </div>
+                        
+                    </div>
+                </div>
+        
+                <div >
+                    <label for="birth">생년월일</label>
+                    <div class="flex" id="date">
+                        <div class="common_border"><input  type="text" id="year" name="year" placeholder="1990">년</div>
+                        <div class="common_border"><input  type="text" id="month" name="month" placeholder="10">월</div>
+                        <div class="common_border"><input  type="text" id="day" name="day" placeholder="10">일</div>
+                 
+                    </div>
+                </div>
+                <div>
+                    <p class="label">성별</p>
+                    <div class="d-flex radio_box">
+                        
+                        <label class="radio_btn checked">
+                            <input type="radio" name="fruit" value="apple">
+                            <span>여자</span>
+                        </label>
+                        
+                        <label class="radio_btn">
+                            <input type="radio" name="fruit" value="banana">
+                            <span>남자</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="location" class="">
+                    <label for="place">거주 지역</label>
+                    <select name="likeLanguage" id="link" class="loc padding-in w-100 common_border">
+                        <option value="none">거주지역을 선택해주세요.</option>
+                        <option value="서울" style="color: #009900">서울</option>
+                        <option value="경기">경기</option>
+                        <option value="인천">인천</option>
+                        <option value="부산">부산</option>
+                        <option value="대구">대구</option>
+                        <option value="광주">광주</option>
+                        <option value="대전">대전</option>
+                        <option value="울산">울산</option>
+                        <option value="세종">세종</option>
+                        <option value="강원">강원</option>
+                        <option value="경남">경남</option>
+                        <option value="경북">경북</option>
+                        <option value="전남">전남</option>
+                        <option value="전북">전북</option>
+                        <option value="충남">충남</option>
+                        <option value="충북">충북</option>
+                        <option value="제주">제주</option>
+                        <option value="기타지역">기타지역</option>
+                </select>
+                </div>
+                <div class="w-100">
+                    <ul class="d-flex last_row">
+                        <li>
+                            <label for="recommend">추천인 아이디</label>
+                            <input class="common_border" type="text" placeholder="추천인 아이디를 입력해주세요">
+                        </li>
+                        <li>
+                            <label for="path">가입경로</label>
+                            <select name="sign" id="way" class="w-100 padding-in common_border">
+                                <option value="none">가입경로를 선택해주세요.</option>
+                                <option value="SNS광고">SNS광고</option>
+                                <option value="지인 추천">지인 추천</option>
+                                <option value="검색">검색</option>
+                                <option value="행사">행사</option>
+                                <option value="방송">방송</option>
+                            </select>
+                            
+                        </li>
+                    </ul>
+
+                </div>
+                
+                
+        </form>
+        <form action="" id="form2" class="agreeBox">
+            <div id="" class="inner2">
+                <div id="agree_p">
+                    <input type="checkbox" id="a1" class="a1">
+                    <label for="a1" class="b1"></label>
+                    <label for="a1" class="black c1">모든 약관에 동의합니다.</label>
+                </div>
+                
+                <div id="agree_box">
+                    
+                    <div>
+                        <input type="checkbox" id="aa" class="aa">
+                        <label for="aa" class="bb"></label>
+                        <label for="aa" class="cc">[필수] 서비스 이용약관 동의 <span>약관보기</span></label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dd">
+                        <label for="dd" class="ee"></label>
+                        <label for="dd" class="ff">[필수] 서비스 이용약관 동의 <span>약관보기</span></label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="signIn" class="inner d-flex">
+            <button class="signin_btn" type="button" onclick="signinFn()">회원가입 하기</button>
+        </div>
+
+        <footer id="ft">
+            <div class="d-flex justify-content-center">
+                <ul class="d-flex">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">콘텐츠 이용정책</a></li>
+                    
+                </ul>
+                <ul class="d-flex">
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">퀴즈톡 홈페이지</a></li>
+                </ul>
+            </div>
+            
+            <p>Copyright by QUIZTALK Co.LTD All Rights Reserved</p>
+        </footer>
+    </div>       
+            
+
+       
+      
+</body>
+</html>
