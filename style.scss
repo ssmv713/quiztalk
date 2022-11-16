@@ -1,0 +1,67 @@
+$bg-grey:#fafafb;
+$w: 450px;
+$titleSize: 20px;
+$borderColor: #F2F4F6;
+$primary: #2B7EFF;
+@mixin commonFont {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@mixin mainBox_setting {
+    margin: 10px;
+    padding: 10px;
+    border: solid 2px $borderColor;
+}
+.main{
+    @include commonFont;
+    background-color: $bg-grey;
+    width: 100%;
+    .main_inner{
+        display: flex;
+        justify-content: center;
+        .main_left{
+            width: $w;
+            background: white;
+            @include mainBox_setting;
+            .main_left_title{
+                font-size: $titleSize;
+            }
+            .mainLeft_img_box{
+                
+                .mainLeft_img_wrap{
+                    margin: 0 auto;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 70%;
+                    background-color: $bg-grey;
+                    border: solid 2px $borderColor;
+                    position: relative;
+                    .img_clickBtn{
+                        font-size: 28px;
+                        width: 23px;
+                        line-height: 23px;
+                        background-color: $primary;
+                        color: white;
+                        border-radius: 70%;
+                        position: absolute;
+                        text-align: center;
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+               
+            }
+        }
+        .main_right{
+            width: $w;
+            background: white;
+            @include mainBox_setting;
+            .main_right_title{
+                font-size: $titleSize;
+            }
+        }
+    }
+}
+
