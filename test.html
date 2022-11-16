@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        
+        </style>
+  </head>
+  <body>
+    <div>
+        <span>타이머</span><span id="timer"></span>
+
+        <input type="button" value="버튼" onclick="stop()">
+      </div>
+    
+   
+       <script>
+
+
+
+       function $ComTimer(){
+    //prototype extend
+}
+
+$ComTimer.prototype = {
+    comSecond : ""
+    , fnCallback : function(){}
+    , timer : ""
+    , domId : ""
+    , fnTimer : function(){
+        var m = Math.floor(this.comSecond / 60) + "분 " + (this.comSecond % 60) + "초";	// 남은 시간 계산
+        this.comSecond--;					// 1초씩 감소
+        console.log(m);
+        this.domId.innerText = m;
+        if (this.comSecond < 0) {			// 시간이 종료 되었으면..
+            clearInterval(this.timer);		// 타이머 해제
+            alert("인증시간이 초과하였습니다. 다시 인증해주시기 바랍니다.")
+        }
+    }
+    ,fnStop : function(){
+        clearInterval(this.timer);
+    }
+}
+
+const AuthTimer = new $ComTimer();
+    AuthTimer.comSecond = 10;
+    AuthTimer.timer = setInterval(function () {
+      AuthTimer.fnTimer();
+    }, 1000);
+    AuthTimer.domId = document.getElementById("timer");
+
+const stop= () => {
+    AuthTimer.fnStop();
+}
+
+       </script>
+</html>

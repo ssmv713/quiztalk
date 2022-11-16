@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>check</title>
+    <!-- <link rel="stylesheet" href="check.css" /> -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="inner">
+      <h1 id="logo" class="header__logo">
+        <a class="logo__link" href="#"
+          ><img class="logo" src="logo-blue.png" alt="로고"
+        /></a>
+      </h1>
+      <p class="header__title">퀴즈톡 가입을 시작합니다!</p>
+      <form id="form1" class="form1" name="signin_form" action="">
+        <h2 class="form-subtitle">회원 및 계정 정보 입력</h2>
+        <div id="email_box" class="form__email-box">
+          <label for="email" class="label">이메일</label>
+          <input
+            class="w-100 form__ipt-border"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="퀴즈톡 아이디로 사용할 이메일을 입력해주세요."
+          />
+          <br />
+
+          <div class="codeBox_wrap">
+            <p id="email_warning" style="display: block" class="email_warning_txt"></p>
+            <div id="codeBox" class="send_numbBox codeBox" class="codeBox">
+              <input
+                id="code"
+                class="form_codeBox_input"
+                type="text"
+                placeholder="인증번호를 입력해주세요"
+              />
+              <span id="timer" style="font-size: 12px; color: #3389ff"></span>
+            </div>
+
+            <input
+              type="button"
+              value="인증번호보내기"
+              id="sendcode_btn"
+              class="blueBtn"
+              onclick="toggleBtn1()"
+            />
+            <input
+              type="button"
+              value="인증번호확인"
+              id="codeSent"
+              class="blueBtn"
+              style="display: none"
+              onclick=" confirmCode()"
+            />
+          </div>
+          <p id="code_msg" style="font-size: 14px"></p>
+        </div>
+        <div>
+          <label for="password" class="label">비밀번호</label>
+          <input
+            type="password"
+            id="PASSWORD_CHECK"
+            name="PASSWORD_CHECK"
+            value=""
+            class="input_txt w-100 form__ipt-border"
+            maxlength="20"
+            onchange="PasswordIsSame()"
+            placeholder="비밀번호를 입력해주세요."
+          />
+        </div>
+        <tr>
+          <label for="re_password" class="label">비밀번호 재입력</label>
+          <td>
+            <input
+              type="password"
+              id="PASSWORD_CHECK_IS_SAME"
+              name="PASSWORD_CHECK_IS_SAME"
+              value=""
+              class="input_txt w-100 form__ipt-border"
+              maxlength="20"
+              placeholder="비밀번호를 입력해주세요."
+              onchange="PasswordIsSame()"
+            /><br />
+            &nbsp;&nbsp;<span id="same"></span>
+          </td>
+        </tr>
+
+        <div>
+          <label for="name" class="label">이름</label>
+          <input
+            class="w-100 form__ipt-border"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="이름을 입력해주세요."
+          />
+        </div>
+        <div>
+          <label for="name" class="label">닉네임</label>
+          <div id="bigbox" class="w-100 form__ipt-border">
+            <input
+              class="nickname_ipt"
+              type="text"
+              oninput="numberMaxLength(this); realtimeCheck(this.value.length)"
+              placeholder="닉네임을 입력해주세요."
+              oninput=" realtimeCheck(this.value.length)"
+            />
+            <div class="inline-block counting counting_box">
+              <span class="counting_box_count1" id="count"></span>
+              <span class="counting_box_count2">/10</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="birth" class="label">생년월일</label>
+          <div class="date__box" id="date">
+            <div class="date__ipt-border">
+              <input
+                class="date__ipt"
+                type="text"
+                onkeypress="return checkNumber(event)"
+                id="year"
+                name="year"
+                placeholder="1990"
+                maxlength="4"
+              />년
+            </div>
+            <div class="date__ipt-border">
+              <input
+                class="date__ipt"
+                type="text"
+                onkeypress="return checkNumber(event)"
+                id="month"
+                name="month"
+                placeholder="10"
+                maxlength="2"
+              />월
+            </div>
+            <div class="date__ipt-border">
+              <input
+                class="date__ipt"
+                type="text"
+                onkeypress="return checkNumber(event)"
+                id="day"
+                name="day"
+                placeholder="10"
+                maxlength="2"
+              />일
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="label">성별</p>
+          <div class="d-flex gender__radio_box">
+            <label class="gender_radio_btn">
+              <input
+                class="gender_input"
+                type="radio"
+                checked="checked"
+                id="female"
+                name="fruit"
+                value="apple"
+              />
+              <span class="gender__title">여자</span>
+            </label>
+            <label class="gender_radio_btn">
+              <input
+                class="gender_input"
+                type="radio"
+                id="male"
+                name="fruit"
+                value="banana"
+              />
+              <span class="gender__title">남자</span>
+            </label>
+          </div>
+        </div>
+        <div id="location" class="select_wrap">
+          <label for="place" class="label">거주 지역</label>
+          <select
+            id="location"
+            name="location"
+            id="location"
+            class="loc select_box w-100 form__ipt-border "
+          >
+            <option selected disabled value="none">
+              거주지역을 선택해주세요.
+            </option>
+            <option value="서울">서울</option>
+            <option value="경기">경기</option>
+            <option value="인천">인천</option>
+            <option value="부산">부산</option>
+            <option value="대구">대구</option>
+            <option value="광주">광주</option>
+            <option value="대전">대전</option>
+            <option value="울산">울산</option>
+            <option value="세종">세종</option>
+            <option value="강원">강원</option>
+            <option value="경남">경남</option>
+            <option value="경북">경북</option>
+            <option value="전남">전남</option>
+            <option value="전북">전북</option>
+            <option value="충남">충남</option>
+            <option value="충북">충북</option>
+            <option value="제주">제주</option>
+            <option value="기타지역">기타지역</option>
+          </select>
+          <i class="select_box_arrow fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="w-100">
+          <ul class="d-flex last_row">
+            <li>
+              <label for="recommend" class="label">추천인 아이디</label>
+              <input
+                class="form__ipt-border"
+                type="text"
+                placeholder="추천인 아이디를 입력해주세요"
+              />
+            </li>
+            <li class="select_wrap">
+              <label for="path" class="label">가입경로</label>
+              <select
+                name="sign"
+                id="way"
+                class="w-100 select_box form__ipt-border "
+              >
+                <option selected disabled value="none">
+                  가입경로를 선택해주세요.
+                </option>
+                <option value="SNS광고">SNS광고</option>
+                <option value="지인 추천">지인 추천</option>
+                <option value="검색">검색</option>
+                <option value="행사">행사</option>
+                <option value="방송">방송</option>
+              </select>
+              <i class="select_box_arrow fa-solid fa-chevron-down"></i>
+            </li>
+          </ul>
+        </div>
+      </form>
+      <form action="" id="form" class="form2" >
+          <div id="agree_p">
+            <input type="checkbox" id="a1" class="a1 term_checkbox_gone" />
+            <label for="a1" class="b1 term_checkbox_show"></label>
+            <label for="a1" class="black c1">모든 약관에 동의합니다.</label>
+          </div>
+          <div id="agree_box" class="agree_box">
+            <div class="term_wrap">
+              <input type="checkbox" id="aa" class="aa chk term_checkbox_gone" />
+              <label for="aa" class="bb term_checkbox_show"></label>
+              <label for="aa" class="cc term_text"
+                >[필수] 서비스 이용약관 동의
+                <span class="term_text_in">약관보기</span>
+              </label>
+            </div>
+            <div  class="term_wrap">
+              <input type="checkbox" id="dd" class="chk term_checkbox_gone" />
+              <label for="dd" class="ee term_checkbox_show"></label>
+              <label for="dd" class="ff term_text"
+                >[필수] 서비스 이용약관 동의
+                <span class="term_text_in">약관보기</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="signIn" class="inner signin_btn_wrap">
+        <button class="signin_btn" type="button" onclick="signin()">
+          회원가입 하기
+        </button>
+      </div>
+      <footer id="ft" class="ft">
+        <div class="ft_inner">
+          <ul class="ft_list">
+            <li>
+              <a href="#">이용약관</a>
+            </li>
+            <li>
+              <a href="#">개인정보처리방침</a>
+            </li>
+            <li>
+              <a href="#">콘텐츠 이용정책</a>
+            </li>
+            <li>
+              <a href="#">고객센터</a>
+            </li>
+            <li>
+              <a href="#">퀴즈톡 홈페이지</a>
+            </li>
+          </ul>
+          
+        </div>
+        <p class="ft_text">Copyright by QUIZTALK Co.LTD All Rights Reserved</p>
+      </footer>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/0f1123ccdb.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="base.js"></script>
+  </body>
+</html>

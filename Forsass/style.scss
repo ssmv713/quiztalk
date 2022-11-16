@@ -1,0 +1,302 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin iconFont {
+  font-weight: 400;
+  font-family: "Font Awesome 5 Free";
+}
+
+$lightGrey: #b9c0c7;
+$greyColor: #dee3e8;
+$border: 1px solid $greyColor;
+$boxShadowColor: 0px 0px 4px 4px rgb(0 0 0 / 3%);
+
+body {
+  font-family: "Pretendard-Regular";
+
+  .inner {
+    width: 800px;
+    margin: 0 auto;
+
+    font-size: 16px;
+    .inline-block {
+      display: inline-block;
+    }
+    .header__logo {
+      margin-top: 7rem;
+      .logo__link {
+        text-decoration: none;
+      }
+    }
+    .header__title {
+      font-size: 28px;
+      margin: 0.8rem 0 4rem 0;
+    }
+    .form1 {
+      border: $border;
+      background-color: #fff;
+      box-shadow: $boxShadowColor;
+      padding: 2.5rem;
+      .label {
+        font-size: 16px;
+        color: grey;
+        display: block;
+        margin: 1rem 0 10px 0;
+      }
+
+      .form__ipt-border {
+        width: 100%;
+        line-height: 48px;
+        border: $border;
+        border-radius: 4px;
+        padding-left: 10px;
+
+        font-size: 14px;
+        margin: 5px 0 5px 0;
+
+        &::placeholder {
+          color: $lightGrey;
+          font-size: 14px;
+        }
+        .nickname_ipt::placeholder {
+          color: $lightGrey;
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        .nickname_ipt {
+          border: none;
+          width: 90%;
+          line-height: 35px;
+        }
+        .counting_box {
+          font-size: 12px;
+          .counting_box_count1 {
+            color: #3389ff;
+            margin-left: 1rem;
+          }
+          .counting_box_count2 {
+            color: rgba(185, 192, 199, 1);
+          }
+        }
+        option {
+          text-align: center;
+          text-align-last: center;
+        }
+      }
+
+      .date__box {
+        display: flex;
+        justify-content: space-between;
+        .date__ipt-border {
+          width: 32%;
+          color: gray;
+          text-align: end;
+          padding-right: 1rem;
+          line-height: 48px;
+          border: 1px solid #dee3e8;
+          border-radius: 4px;
+          padding-left: 10px;
+          box-sizing: border-box;
+          font-size: 14px;
+          margin: 5px 0 5px 0;
+          font-weight: 400;
+
+          .date__ipt {
+            width: 78%;
+            line-height: 30px;
+            margin-right: 1.3rem;
+            padding-left: 0.4rem;
+            border: none;
+            &::placeholder {
+              color: $lightGrey;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .gender__radio_box {
+        justify-content: space-between;
+        display: flex;
+        .gender_radio_btn {
+          width: 49.9%;
+          .gender__title {
+            display: inline-block;
+            border: 1px solid #dfdfdf;
+            background-color: #ffffff;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            line-height: 48px;
+            border-radius: 4px;
+            color: grey;
+          }
+          .gender_input {
+            display: none;
+            &:checked {
+              + .gender__title {
+                background-color: #3389ff19;
+                color: rgba(51, 137, 255, 1);
+                border: 1px solid #3389ffff;
+                width: 100%;
+                z-index: 3;
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+      .select_wrap {
+        position: relative;
+        .select_box {
+          padding: 0 15px;
+          appearance: none;
+        }
+        .select_box_arrow {
+          position: absolute;
+          right: 11px;
+          top: 44px;
+        }
+      }
+
+      .form-subtitle {
+        font-size: 20px;
+      }
+      .form__email-box {
+        .codeBox_wrap {
+          display: flex;
+          margin-left: -3px;
+          justify-content: space-between;
+          .email_warning_txt {
+            margin: 5px 6px;
+            font-size: 15px;
+          }
+          .codeBox {
+            display: none;
+            width: 75%;
+            margin-right: 2%;
+            border: 1px solid #dee3e8ff;
+            padding-left: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            margin: 5px 0 5px 3px;
+            .form_codeBox_input {
+              width: 90%;
+              line-height: 48px;
+              border: none;
+              outline: none;
+            }
+          }
+        }
+        .blueBtn {
+          width: 23%;
+          background-color: #fff;
+          border: 1px solid rgba(153, 196, 255, 1);
+          line-height: 48px;
+          border-radius: 4px;
+          color: rgba(153, 196, 255, 1);
+          margin: 5px 0 5px 8px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      }
+    }
+    .form2 {
+      border: 1px solid #dee3e8;
+      background-color: #fff;
+      box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 3%);
+      margin-top: 1.3rem;
+      padding: 1.5rem 1rem;
+      font-size: 14px;
+
+      .term_checkbox_gone {
+        display: none;
+
+        &:checked + .term_checkbox_show {
+          &:before {
+            content: "\f058";
+            font-weight: 900;
+            color: #3389ff;
+          }
+        }
+      }
+      .term_checkbox_show {
+        &:before {
+          content: "\f058";
+          @include iconFont;
+          margin-right: 10px;
+          color: rgb(183, 182, 182);
+          font-size: 16px;
+        }
+      }
+
+      .agree_box {
+        background-color: #fafafb;
+        margin-top: 1rem;
+        box-sizing: border-box;
+        padding: 3px 14px;
+        .term_wrap {
+          margin: 14px 0;
+          .term_text {
+            color: #6a7584;
+            margin: 0.5rem 0;
+            .term_text_in {
+              color: #3389ff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .signin_btn_wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    .signin_btn {
+      width: 160px;
+      color: white;
+      background-color: #3389ff;
+      border: none;
+      line-height: 48px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .ft {
+    margin-top: 100px;
+    .ft_list {
+      justify-content: center;
+      display: flex;
+      margin-bottom: 3px;
+      li {
+        margin: 5px 10px;
+        font-size: 14px;
+        a {
+          color: rgba(185, 192, 199, 1);
+        }
+      }
+    }
+    .ft_text {
+      text-align: center;
+      color: rgba(185, 192, 199, 1);
+      font-size: 14px;
+    }
+  }
+
+  #btn3 {
+    //
+    :disabled {
+      background-color: rgba(239, 239, 239, 0.3);
+      color: rgba(66, 63, 63, 0.548);
+      border-color: rgba(118, 118, 118, 0.3);
+      cursor: default;
+    }
+  }
+}

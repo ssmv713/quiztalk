@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Pretendard-Regular";
+}
+body .inner {
+  width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+body .inner .inline-block {
+  display: inline-block;
+}
+body .inner .header__logo {
+  margin-top: 7rem;
+}
+body .inner .header__logo .logo__link {
+  text-decoration: none;
+}
+body .inner .header__title {
+  font-size: 28px;
+  margin: 0.8rem 0 4rem 0;
+}
+body .inner .form1 {
+  border: 1px solid #dee3e8;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.03);
+  padding: 2.5rem;
+}
+body .inner .form1 .label {
+  font-size: 16px;
+  color: grey;
+  display: block;
+  margin: 1rem 0 10px 0;
+}
+body .inner .form1 .form__ipt-border {
+  width: 100%;
+  line-height: 48px;
+  border: 1px solid #dee3e8;
+  border-radius: 4px;
+  padding-left: 10px;
+  font-size: 14px;
+  margin: 5px 0 5px 0;
+}
+body .inner .form1 .form__ipt-border::-moz-placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+}
+body .inner .form1 .form__ipt-border:-ms-input-placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+}
+body .inner .form1 .form__ipt-border::placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+}
+body .inner .form1 .form__ipt-border .nickname_ipt::-moz-placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .inner .form1 .form__ipt-border .nickname_ipt:-ms-input-placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .inner .form1 .form__ipt-border .nickname_ipt::placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .inner .form1 .form__ipt-border .nickname_ipt {
+  border: none;
+  width: 90%;
+  line-height: 35px;
+}
+body .inner .form1 .form__ipt-border .counting_box {
+  font-size: 12px;
+}
+body .inner .form1 .form__ipt-border .counting_box .counting_box_count1 {
+  color: #3389ff;
+  margin-left: 1rem;
+}
+body .inner .form1 .form__ipt-border .counting_box .counting_box_count2 {
+  color: rgb(185, 192, 199);
+}
+body .inner .form1 .form__ipt-border option {
+  text-align: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
+}
+body .inner .form1 .date__box {
+  display: flex;
+  justify-content: space-between;
+}
+body .inner .form1 .date__box .date__ipt-border {
+  width: 32%;
+  color: gray;
+  text-align: end;
+  padding-right: 1rem;
+  line-height: 48px;
+  border: 1px solid #dee3e8;
+  border-radius: 4px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin: 5px 0 5px 0;
+  font-weight: 400;
+}
+body .inner .form1 .date__box .date__ipt-border .date__ipt {
+  width: 78%;
+  line-height: 30px;
+  margin-right: 1.3rem;
+  padding-left: 0.4rem;
+  border: none;
+}
+body .inner .form1 .date__box .date__ipt-border .date__ipt::-moz-placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+}
+body .inner .form1 .date__box .date__ipt-border .date__ipt:-ms-input-placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+}
+body .inner .form1 .date__box .date__ipt-border .date__ipt::placeholder {
+  color: #b9c0c7;
+  font-size: 14px;
+}
+body .inner .form1 .gender__radio_box {
+  justify-content: space-between;
+  display: flex;
+}
+body .inner .form1 .gender__radio_box .gender_radio_btn {
+  width: 49.9%;
+}
+body .inner .form1 .gender__radio_box .gender_radio_btn .gender__title {
+  display: inline-block;
+  border: 1px solid #dfdfdf;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  line-height: 48px;
+  border-radius: 4px;
+  color: grey;
+}
+body .inner .form1 .gender__radio_box .gender_radio_btn .gender_input {
+  display: none;
+}
+body .inner .form1 .gender__radio_box .gender_radio_btn .gender_input:checked + .gender__title {
+  background-color: rgba(51, 137, 255, 0.0980392157);
+  color: rgb(51, 137, 255);
+  border: 1px solid #3389ff;
+  width: 100%;
+  z-index: 3;
+  position: relative;
+}
+body .inner .form1 .select_wrap {
+  position: relative;
+}
+body .inner .form1 .select_wrap .select_box {
+  padding: 0 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+body .inner .form1 .select_wrap .select_box_arrow {
+  position: absolute;
+  right: 11px;
+  top: 44px;
+}
+body .inner .form1 .form-subtitle {
+  font-size: 20px;
+}
+body .inner .form1 .form__email-box .codeBox_wrap {
+  display: flex;
+  margin-left: -3px;
+  justify-content: space-between;
+}
+body .inner .form1 .form__email-box .codeBox_wrap .email_warning_txt {
+  margin: 5px 6px;
+  font-size: 15px;
+}
+body .inner .form1 .form__email-box .codeBox_wrap .codeBox {
+  display: none;
+  width: 75%;
+  margin-right: 2%;
+  border: 1px solid #dee3e8;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 5px 0 5px 3px;
+}
+body .inner .form1 .form__email-box .codeBox_wrap .codeBox .form_codeBox_input {
+  width: 90%;
+  line-height: 48px;
+  border: none;
+  outline: none;
+}
+body .inner .form1 .form__email-box .blueBtn {
+  width: 23%;
+  background-color: #fff;
+  border: 1px solid rgb(153, 196, 255);
+  line-height: 48px;
+  border-radius: 4px;
+  color: rgb(153, 196, 255);
+  margin: 5px 0 5px 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+body .inner .form2 {
+  border: 1px solid #dee3e8;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.03);
+  margin-top: 1.3rem;
+  padding: 1.5rem 1rem;
+  font-size: 14px;
+}
+body .inner .form2 .term_checkbox_gone {
+  display: none;
+}
+body .inner .form2 .term_checkbox_gone:checked + .term_checkbox_show:before {
+  content: "\f058";
+  font-weight: 900;
+  color: #3389ff;
+}
+body .inner .form2 .term_checkbox_show:before {
+  content: "\f058";
+  font-weight: 400;
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+  color: rgb(183, 182, 182);
+  font-size: 16px;
+}
+body .inner .form2 .agree_box {
+  background-color: #fafafb;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  padding: 3px 14px;
+}
+body .inner .form2 .agree_box .term_wrap {
+  margin: 14px 0;
+}
+body .inner .form2 .agree_box .term_wrap .term_text {
+  color: #6a7584;
+  margin: 0.5rem 0;
+}
+body .inner .form2 .agree_box .term_wrap .term_text .term_text_in {
+  color: #3389ff;
+}
+body .signin_btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+body .signin_btn_wrap .signin_btn {
+  width: 160px;
+  color: white;
+  background-color: #3389ff;
+  border: none;
+  line-height: 48px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+body .ft {
+  margin-top: 100px;
+}
+body .ft .ft_list {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3px;
+}
+body .ft .ft_list li {
+  margin: 5px 10px;
+  font-size: 14px;
+}
+body .ft .ft_list li a {
+  color: rgb(185, 192, 199);
+}
+body .ft .ft_text {
+  text-align: center;
+  color: rgb(185, 192, 199);
+  font-size: 14px;
+}
+body #btn3 :disabled {
+  background-color: rgba(239, 239, 239, 0.3);
+  color: rgba(66, 63, 63, 0.548);
+  border-color: rgba(118, 118, 118, 0.3);
+  cursor: default;
+}/*# sourceMappingURL=style.css.map */
